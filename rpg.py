@@ -1,5 +1,9 @@
 
 import random as aleatorio
+import os
+import time
+
+os.system("clear")
 
 print("\n RPG \n")
 
@@ -12,7 +16,7 @@ ataque_MAX_gue = 10
 
 while True:
 
-    personagem = int(input(" Escolha entre ser um mago (digite 1) ou um guerreiro (digite 2)\n -->"))
+    personagem = int(input("\n Escolha entre ser um mago (digite 1) ou um guerreiro (digite 2)\n --> "))
 
     if personagem == 1:
 
@@ -45,10 +49,12 @@ while True:
 
     while True:
 
+        time.sleep(1.2)
+
         print("\n--------------------------------------------")
         print("\n SEU TURNO")
 
-        acao = int(input("\n Escolha o que voce quer fazer: \n\n - Atacar (digite 1)\n - Defender (digite 2)\n - curar (digite 3)\n - Descansar (digite 4) \n\n -->"))
+        acao = int(input("\n Escolha o que voce quer fazer: \n\n - Atacar (digite 1)\n - Defender (digite 2)\n - curar (digite 3)\n - Descansar (digite 4) \n\n --> "))
 
         if poder > 1:
 
@@ -162,6 +168,8 @@ while True:
 
     acaoM = aleatorio.randint(1,2)
 
+    time.sleep(1.35)
+
     print("\n--------------------------------------------")
     print("\n TURNO DO MONSTRO")
 
@@ -203,6 +211,8 @@ while True:
 
     if vidaP <= 0:
 
+        time.sleep(1)
+
         print("\n--------------------------------------------")
         print("\n-------> GAME OVER <-------\n")
 
@@ -233,14 +243,14 @@ while True:
 
             while True:
 
-                personagem = int(input(" Escolha entre ser um mago (digite 1) ou um guerreiro (digite 2) -->"))
+                personagem = int(input("\n Escolha entre ser um mago (digite 1) ou um guerreiro (digite 2) --> "))
 
                 if personagem == 1:
 
                     print(f"\n Seu personagem: Mago")
                     print(f" Sua vida e: {vidaP}")
 
-                    poder = aleatorio.randint(7,15)
+                    poder = aleatorio.randint(7,ataque_MAX_ma)
 
                     print(f" Sua barra de poder: {poder}")
 
@@ -251,7 +261,7 @@ while True:
                     print(f"\n Seu personagem: Guerreiro")
                     print(f" Sua vida e: {vidaP}")
 
-                    poder = aleatorio.randint(5,10)
+                    poder = aleatorio.randint(5,ataque_MAX_gue)
 
                     print(f" Sua barra de poder: {poder}")
 
@@ -266,6 +276,8 @@ while True:
 
     
     if vidaM <= 0:
+
+        time.sleep(1)
 
         print("\n --> O monstro morreu <-- \n")
 
